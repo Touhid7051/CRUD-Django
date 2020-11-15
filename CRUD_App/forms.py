@@ -6,4 +6,4 @@ class Student_Admission_from(ModelForm):
 
     class Meta:
         model = Student_Admission
-        fields = ['name','father_name','mother_name','number','email','student_image']
+        fields = ['name','father_name','mother_name','email','number','student_image']
