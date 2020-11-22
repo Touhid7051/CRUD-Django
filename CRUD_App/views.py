@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 
 # Create your views here.
 from CRUD_App.forms import Student_Admission_from
-
+from CRUD_App.models import Student_Admission
 
 
 def index(request):
@@ -16,3 +16,10 @@ def student_admission(request):
         return redirect('index')
     context = {'form' : form}
     return render(request,'student_admission_data.html', context)
+
+
+def student_list(request):
+
+    data=Student_Admission.objects.all()
+    context={'data' : data}
+    return render(request, 'student_list.html',context)
