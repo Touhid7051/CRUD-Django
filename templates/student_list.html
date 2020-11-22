@@ -9,7 +9,7 @@
       <th scope="col">Mother Name</th>
       <th scope="col">Mobile Number</th>
         <th scope="col">E-Mail</th>
-       <!-- <th scope="col">Photo</th> -->
+       <th scope="col">Photo</th>
         <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -22,10 +22,13 @@
       <td>{{p.mother_name}}</td>
       <td>{{p.number}}</td>
         <td>{{p.email}}</td>
-        <!-- <td>{{p.student_image}}</td> -->
+        <td>{{p.student_image}}</td>
 
         <td>
             <button>Edit</button>
+          <button>
+            <a href="{%url 'student_details' id=p.id %}">View</a>
+          </button>
             <button>Delete</button>
             <button>Update</button>
         </td>

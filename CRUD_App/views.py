@@ -23,3 +23,10 @@ def student_list(request):
     data=Student_Admission.objects.all()
     context={'data' : data}
     return render(request, 'student_list.html',context)
+
+def Student_details(request, id):
+
+    data = Student_Admission.objects.get(id = id)
+    context = {'data' : data}
+    return render(request, 'student_details.html', context)
+
