@@ -30,3 +30,20 @@ def Student_details(request, id):
     context = {'data' : data}
     return render(request, 'student_details.html', context)
 
+
+def student_update(request, id):
+    data =Student_Admission.objects.get(id=id)
+
+    form = Student_Admission_from(request.POST, request.FILES , instance=data)
+    if form.is_valid():
+        form = form.save(commit=False)
+        form.save()
+        return redirect('student_list')
+    context = {'form': form}
+    return render(request, 'student_admission_data.html', context)
+
+def Student_delete(request,id):
+    data = Student_Admission.objects.get(id=id)
+    data.delete()
+    return redirect('student_list')
+
